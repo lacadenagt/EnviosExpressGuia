@@ -103,6 +103,18 @@ public class Usuario {
         this.idTipoUsuario = idTipoUsuario;
     }
 
+    
+    public Usuario(){}
+    
+    public Usuario(String correo,String username, String contrasena,int idEstadoCuenta, int idTipoUsuario){
+        this.correo=correo;
+        this.username=username;
+        this.contrasena=contrasena;
+        this.idEstadoCuenta=idEstadoCuenta;
+        this.idTipoUsuario=idTipoUsuario;
+    }
+    
+    
     public Usuario(int idUsuario, String nombres, String apellidos, String fechaNacimiento, String correo, String username, String contrasena, Date fechaRegistro, int idEstadoCuenta, int idTipoUsuario) {
         this.idUsuario = idUsuario;
         this.nombres = nombres;

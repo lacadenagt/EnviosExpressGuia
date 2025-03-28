@@ -63,8 +63,26 @@ public class Conexion {
         
     }
     
-    public static void main(String[] args){
+    // realizar consultas y evitar inyección sql
+    public ResultSet hacerConsulta(String consulta,Object[] params){
+        ResultSet resultSet = null;
+        try{
+            PreparedStatement prep = conection.prepareStatement(consulta);
+            for(int i=0;i<params.length;i++){
+                prep.setObject(i+1,params[i]);
+            }
+            
+            resultSet = prep.executeQuery();
+            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Se produjo el siguiente error: "+ex,"Mensaje",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        return resultSet;
+    }
+    
+    /*public static void main(String[] args){
         Conexion c = new Conexion();
         
-    }
+    }*/
 }

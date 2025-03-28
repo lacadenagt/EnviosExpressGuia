@@ -20,6 +20,8 @@ CREATE TABLE EstatusCuenta(
 INSERT INTO EstatusCuenta(nombreEstadoCuenta) VALUES ('ACTIVO');
 INSERT INTO EstatusCuenta(nombreEstadoCuenta) VALUES ('INACTIVO');
 
+select * from EstatusCuenta;
+
 CREATE TABLE Usuario(
 	idUsuario INT AUTO_INCREMENT,
     nombres varchar(100) NOT NULL,
@@ -35,5 +37,8 @@ CREATE TABLE Usuario(
     FOREIGN KEY (idTipoUsuario) REFERENCES TipoUsuario(idTipoUsuario),
     FOREIGN KEY (idEstadoCuenta) REFERENCES EstatusCuenta(idEstadoCuenta)
 ); 
+
+INSERT INTO Usuario(nombres,apellidos,fechaNacimiento,correo,username,contrasena,fechaRegistro,
+idEstadoCuenta,idTipoUsuario) VALUES ('Santos','Lopez','1993-10-01','santos@gmail.com','santos','santos','2025-01-01',1,1);
 
 
